@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-const ButtonLayout = styled.button`
+const Button = styled.button`
   left: 15px;
   right: 15px;
   padding: 13px 0;
   font-size: 15px;
-  font-weight: 700;
   line-height: 24px;
   border: none;
   border-radius: 2px;
@@ -14,8 +13,8 @@ const ButtonLayout = styled.button`
   cursor: pointer;
 `;
 
-const Button = ({ contents }) => {
-  return <ButtonLayout>{contents}</ButtonLayout>;
+const FillButton = ({ contents }) => {
+  return <Button>{contents}</Button>;
 };
 
-export default Button;
+export default FillButton;
