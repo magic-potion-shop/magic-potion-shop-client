@@ -1,8 +1,10 @@
 import styled from "styled-components";
-import Logo from "../../components/Logo/Logo";
-import Button from "../../components/button/Button";
+import Logo from "../../Components/Logo/Logo";
+import FillButton from "../../Components/Button/FillButton/FillButton";
 
 const MainLayout = styled.main`
+  color: var(--white);
+
   & button {
     position: absolute;
     bottom: 25px;
@@ -30,19 +32,19 @@ const Contents = styled.div`
   }
 `;
 
-const Main = () => {
+const MainPage = () => {
   return (
     <MainLayout>
       <Contents>
-        <h1 className="sr-only">마녀의 물약상점 메인 페이지</h1>
+        <h2 className="sr-only">마녀의 물약상점 메인 페이지</h2>
         <Logo />
         <p>
           어서오세요, <span>마녀의 물약상점</span>입니다
         </p>
       </Contents>
-      <Button contents="물약 제조하러 가기" />
+      <FillButton contents="물약 제조하러 가기" />
     </MainLayout>
   );
 };
 
-export default Main;
+export default MainPage;
