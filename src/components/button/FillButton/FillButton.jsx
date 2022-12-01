@@ -13,8 +13,8 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const FillButton = ({ contents }) => {
-  return <Button>{contents}</Button>;
+const FillButton = (props) => {
+  return <Button>{props.children}</Button>;
 };
 
 export default FillButton;
