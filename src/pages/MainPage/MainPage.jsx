@@ -1,15 +1,20 @@
 import styled from "styled-components";
 import Logo from "../../Components/Logo/Logo";
-import FillButton from "../../Components/Button/FillButton/FillButton";
+import FillButton from "../../Components/Buttons/FillButton/FillButton";
 import EmphasisText from "../../Components/EmphasisText/EmphasisText";
 
 const Contents = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  width: 100%;
 
   & img {
+    display: block;
     margin-bottom: 18px;
   }
 `;
