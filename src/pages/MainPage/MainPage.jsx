@@ -3,7 +3,7 @@ import Logo from "../../Components/Logo/Logo";
 import EmphasisText from '../../Components/EmphasisText/EmphasisText';
 import MoveButton from "../../Components/Buttons/MoveButton/MoveButton";
 
-const Contents = styled.div`
+const Contents = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
