@@ -7,9 +7,10 @@ const Text = styled.strong`
   font-size: 17px;
   font-weight: 700;
   line-height: 24px;
+  color: var(--white);
 
   & span {
-    color: #8479e1;
+    color: var(--main-color);
   }
 `;
 
