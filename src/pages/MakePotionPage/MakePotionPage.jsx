@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import FillButton from '../../Components/Buttons/FillButton/FillButton';
 import EmphasisText from '../../Components/EmphasisText/EmphasisText';
-import { Link } from 'react-router-dom';
 import PotionList from '../../Components/PotionList/PotionList';
 import SelectList from '../../Components/SelectList/SelectList';
 import Pot from '../../Components/Pot/Pot';
+import MoveButton from '../../Components/Buttons/MoveButton/MoveButton';
 
 const Layout = styled.section`
   margin-top: 45px;
@@ -43,11 +42,9 @@ const MakePotionPage = () => {
         <Pot />
       </ResultPotionWrapper>
 
-      <FillButton>
-        <Link to='/write-letter'>
-          물약 포장하러 가기
-        </Link>
-      </FillButton>
+      <MoveButton to='/write-letter'>
+        물약 포장하러 가기
+      </MoveButton>
     </Layout>
   );
 }
