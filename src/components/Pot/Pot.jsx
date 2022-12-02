@@ -22,14 +22,14 @@ const Color = styled.div`
   height: 90px;
   bottom: 6px;
   border-radius: 35%;
-  background-color: red;
+  ${props => props.color};
 `;
 
-const Pot = () => {
+const Pot = ({ color }) => {
   return (
     <Wrapper>
       <PotImage src={PotIcon} alt="완성된 물약" />
-      <Color />
+      <Color color={color} />
     </Wrapper>
   );
 }

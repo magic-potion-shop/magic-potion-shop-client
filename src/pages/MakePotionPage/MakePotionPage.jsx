@@ -39,7 +39,7 @@ const MakePotionPage = () => {
 
       <ResultPotionWrapper>
         <EmphasisText marginBottom='40px'>선택한 레시피로 만든 <span>물약</span>이에요</EmphasisText>
-        <Pot />
+        <Pot color='background-color: #00DBDE;background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);' />
       </ResultPotionWrapper>
 
       <MoveButton to='/write-letter'>
