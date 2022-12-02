@@ -7,6 +7,7 @@ import "./app.css";
 import { useEffect, useState } from "react";
 import MakePotionPage from "./Pages/MakePotionPage/MakePotionPage";
 import { useWindowSize } from "./Hooks/useWindowSize";
+import { Route, Routes } from "react-router-dom";
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
@@ -50,14 +51,12 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  ${props => (props.height ? `height: ${props.height}px;` : "")}
   margin: 0 auto;
   padding: 15px;
   background-color: var(--main-bg-color);
 `;
 
 function App() {
-  const { height } = useWindowSize();
   const [isOpenMenu, setIsOpenMenu] = useState(false);
 
   const handleOpenMenu = () => {
@@ -71,14 +70,17 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <Container height={height}>
+      <Container>
         <Header onClickMenu={handleOpenMenu} />
         {
           isOpenMenu ? <Menu onClickCloseButton={handleCloseMenu} /> : null
         }
         <Main>
-          <MainPage />
-          {/* <MakePotionPage /> */}
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/make" element={<MakePotionPage />} />
+            {/* <Route path="/*" element={<NotFoundPage />} /> */}
+          </Routes>
         </Main>
       </Container>
     </>
