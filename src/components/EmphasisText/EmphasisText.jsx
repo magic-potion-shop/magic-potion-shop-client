@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Text = styled.strong`
+  display: block;
+  ${props => props.marginBottom ? `margin-bottom: ${props.marginBottom};` : null}
   font-size: 17px;
   font-weight: 700;
   line-height: 24px;
@@ -13,7 +15,7 @@ const Text = styled.strong`
 
 const EmphasisText = (props) => {
   return (
-    <Text>{props.children}</Text>
+    <Text marginBottom={props.marginBottom}>{props.children}</Text>
   );
 }
 
