@@ -1,15 +1,14 @@
 import styled from "styled-components";
 
 const Button = styled.button`
-  left: 15px;
-  right: 15px;
+  width: 100%;
   padding: 13px 0;
   font-size: 15px;
   line-height: 24px;
   border: none;
   border-radius: 2px;
-  color: #fff;
-  background-color: #8479e1;
+  color: var(--white);
+  background-color: var(--main-color);
   cursor: pointer;
 `;
 
