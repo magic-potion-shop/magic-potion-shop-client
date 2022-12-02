@@ -9,26 +9,24 @@ import GreenPotionIcon from '../../assets/icons/potion/dark/green-potion.png';
 import BluePotionIcon from '../../assets/icons/potion/dark/blue-potion.png';
 import PinkPotionIcon from '../../assets/icons/potion/dark/pink-potion.png';
 import PurplePotionIcon from '../../assets/icons/potion/dark/purple-potion.png';
+import PotIcon from '../../assets/icons/pot.png';
+import { Link } from 'react-router-dom';
 
 const Layout = styled.section`
   margin-top: 45px;
   color: var(--white);
-
-  & button {
-    position: absolute;
-    bottom: 25px;
-  }
-
-  & strong {
-    padding-left: 10px;
-  }
+  padding: 10px;
 `;
+
+const PostionListWrapper = styled.div`
+  margin-bottom: 70px;
+`
 
 const PotionList = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 35px 8px;
-  margin: 0 25px 70px 25px;
+  margin-bottom: 70px;
 `;
 
 const PotionItem = styled.li`
@@ -47,10 +45,69 @@ const PotionItem = styled.li`
   }
 `;
 
+const SelectPotionListWrapper = styled.div`
+  margin-bottom: 70px;
+`;
+
+const SelectPotionList = styled.ol`
+  padding: 11px 12px 11px 20px;
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+
+  & strong {
+    margin-right: 8px;
+  }
+
+  & li:not(:last-child) {
+    margin-bottom: 10px;
+  }
+`;
+
+const SelectPotionItem = styled.li`
+  font-size: 15px;
+  line-height: 1.6;
+`;
+
+const CancleButton = styled.button`
+  padding: 0 6px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 2px;
+  color: var(--main-color);
+  background-color: var(--sub-bg-color);
+`;
+
+const ResultPotionWrapper = styled.div`
+  margin-bottom: 60px;
+`;
+
+const ResultPotion = styled.div`
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+`;
+
+const PotImage = styled.img`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+`;
+
+const Color = styled.div`
+  position: absolute;
+  width: 125px;
+  height: 90px;
+  bottom: 6px;
+  border-radius: 35%;
+  background-color: red;
+`;
+
 const MakePotionPage = () => {
   return (
     <Layout>
-      <div>
+      <PostionListWrapper>
         <EmphasisText marginBottom='40px'>전하고 싶은 <span>물약</span>을 골라주세요</EmphasisText>
         <PotionList>
           <PotionItem>
@@ -96,32 +153,39 @@ const MakePotionPage = () => {
             </figure>
           </PotionItem>
         </PotionList>
-      </div>
+      </PostionListWrapper>
 
-      <div>
+      <SelectPotionListWrapper>
         <EmphasisText marginBottom='25px'>선택한 <span>레시피</span>에요</EmphasisText>
-        <ol>
-          <li>귀여워 물약</li>
-          <li>고마워 물약</li>
-          <li>건강해 물약</li>
-          <li>귀여워 물약</li>
-          <li>고마워 물약</li>
-          <li>건강해 물약</li>
-          <li>귀여워 물약</li>
-          <li>고마워 물약</li>
-          <li>건강해 물약</li>
-          <li>귀여워 물약</li>
-          <li>고마워 물약</li>
-          <li>건강해 물약</li>
-        </ol>
-      </div>
+        <SelectPotionList>
+          <SelectPotionItem>
+            <strong>귀여워 물약</strong>
+            <CancleButton>☓</CancleButton>
+          </SelectPotionItem>
+          <SelectPotionItem>
+            <strong>고마워 물약</strong>
+            <CancleButton>☓</CancleButton>
+          </SelectPotionItem>
+          <SelectPotionItem>
+            <strong>건강해 물약</strong>
+            <CancleButton>☓</CancleButton>
+          </SelectPotionItem>
+        </SelectPotionList>
+      </SelectPotionListWrapper>
 
-      <div>
-        <EmphasisText marginBottom='25px'>선택한 레시피로 만든 <span>물약</span>이에요</EmphasisText>
-        <div>물약</div>
-      </div>
+      <ResultPotionWrapper>
+        <EmphasisText marginBottom='40px'>선택한 레시피로 만든 <span>물약</span>이에요</EmphasisText>
+        <ResultPotion>
+          <PotImage src={PotIcon} alt="완성된 물약" />
+          <Color />
+        </ResultPotion>
+      </ResultPotionWrapper>
 
-      {/* <FillButton>물약 전달하러 가기</FillButton> */}
+      <FillButton>
+        <Link to='/write-letter'>
+          물약 포장하러 가기
+        </Link>
+      </FillButton>
     </Layout>
   );
 }
